@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marble Roulette Roguelike</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scanlines"></div>
+  <main class="app">
+    <header class="topbar panel">
+      <div>
+        <h1>Marble Roulette</h1>
+        <p>Roulette trifft Roguelike: 3 Spins, 5 Start-Murmeln, verrückte Synergien.</p>
+      </div>
+      <button id="newRunBtn" class="danger">Neue Runde</button>
+    </header>
+
+    <section class="stats panel">
+      <div><span>Level</span><strong id="level">1</strong></div>
+      <div><span>Ziel</span><strong id="target">0</strong></div>
+      <div><span>Score</span><strong id="roundScore">0</strong></div>
+      <div><span>Bank</span><strong id="bank">0</strong></div>
+      <div><span>Spins</span><strong id="spins">3</strong></div>
+    </section>
+
+    <section class="layout">
+      <section class="panel board-wrap">
+        <div class="wheel-head">
+          <h2>Roulette-Tisch</h2>
+          <div class="actions">
+            <button id="spinBtn">Spin!</button>
+            <button id="endRoundBtn" class="secondary">Runde werten</button>
+          </div>
+        </div>
+        <div id="rouletteBoard" class="board"></div>
+        <div id="spinLog" class="log"></div>
+      </section>
+
+      <aside class="panel side">
+        <h2>Murmeln</h2>
+        <div id="marbleList" class="cards"></div>
+        <h2>Glücksbringer</h2>
+        <div id="charmList" class="cards compact"></div>
+      </aside>
+    </section>
+
+    <section id="shop" class="panel shop hidden">
+      <div class="shop-head">
+        <div>
+          <h2>Zwischenlevel-Shop</h2>
+          <p>Kaufe mit Bank-Punkten. Überschüssige Punkte aus der Runde werden deiner Bank gutgeschrieben.</p>
+        </div>
+        <button id="nextLevelBtn">Nächstes Level</button>
+      </div>
+      <div id="shopItems" class="shop-grid"></div>
+    </section>
+
+    <section id="gameOver" class="panel modal hidden">
+      <h2 id="gameOverTitle">Run beendet</h2>
+      <p id="gameOverText"></p>
+      <button id="restartBtn">Nochmal versuchen</button>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
